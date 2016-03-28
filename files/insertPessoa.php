@@ -3,7 +3,7 @@
 include("../functions/conexao.php");
 
 $nomeUsuario = $_POST["inputForNomeUsuario"];
-$senha = $_POST["inputForSenha"];
+$senha = sha1($_POST["inputForSenha"]);
 $nomeCompleto = $_POST["inputForNomeCompleto"];
 $rg = $_POST["inputForRG"];
 $cpf = $_POST["inputForCPF"];

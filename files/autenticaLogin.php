@@ -4,7 +4,7 @@ include("importSession.php");
 include("../functions/conexao.php");
 
 $usuario = $_POST["inputForNomeUsuario"];
-$senha = $_POST["inputForSenha"];
+$senha = sha1($_POST["inputForSenha"]);
 if(isset($_POST["inputForKeepLogged"])){
 	$keepLogged = true;
 }else{

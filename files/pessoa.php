@@ -8,7 +8,7 @@ if(!isset($_GET['usuario'])){
 	echo '<div class="page-header"><h1>Usuário não encontrado</h1></div>';
 	exit();
 }else{
-	$query = $con->query("SELECT * FROM Pessoa WHERE idPessoa = '" . $_GET['usuario'] . "'");
+	$query = $con->query("SELECT * FROM Pessoa WHERE usuario = '" . $_GET['usuario'] . "'");
 	if($query->rowCount()==1){
 		while($row = $query->fetch(PDO::FETCH_OBJ)){
 			echo '<div class="page-header"><h1>Informações pessoais</h1></div>';

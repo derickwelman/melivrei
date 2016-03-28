@@ -1,0 +1,1 @@
+ALTER TABLE Pessoa MODIFY senha char(40);
