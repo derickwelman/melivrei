@@ -7,4 +7,5 @@ unset($_COOKIE['nome']);
 setcookie('idPessoa', null, -1);
 setcookie('usuario', null, -1);
 setcookie('nome', null, -1);
+echo '<script>window.location="index.php"</script>';
 ?>

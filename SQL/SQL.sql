@@ -4,7 +4,7 @@ USE melivrei;
 CREATE TABLE Pessoa(
 	idPessoa	INT		 	NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	usuario		VARCHAR(16)	NOT NULL UNIQUE,
-	senha		varchar(20)	NOT NULL,
+	senha		varchar(40)	NOT NULL,
 	nome		VARCHAR(60) NOT NULL,
 	rg			CHAR(9)		NOT NULL,
 	cpf			CHAR(11)	NOT NULL,
@@ -51,7 +51,7 @@ CREATE TABLE Produto(
 	idGenero		INT 			NOT NULL,
 	autor 			VARCHAR(40)		NULL,
 	editora 		VARCHAR(40)		NULL,
-	preco			DOUBLE(4,2)		NOT NULL,
+	preco			DOUBLE(6,2)		NOT NULL,
 	paginas			INT(4)			NULL,
 	estado			INT(1)			NOT NULL,
 	imagem			VARCHAR(36)		NOT NULL,
@@ -61,6 +61,10 @@ CREATE TABLE Produto(
 	-- CONSTRAINT fk_idAutor FOREIGN KEY idAutor REFERENCES Autor (idAutor),
 	-- CONSTRAINT fk_idEditora FOREIGN KEY idEditora REFERENCES Editora (idEditora)
 );
+
+CREATE VIEW PesquisaProduto AS SELECT pe.usuario, pe.nome AS nomePessoa, pr.idProduto, pr.idTipo, pr.idGenero, pr.idPessoa, pr.nome AS nome, pr.descricao AS descricao, t.descricao AS tipo, g.descricao AS genero, pr.autor, pr.editora, pr.preco, pr.estado AS estado, pr.paginas, pr.imagem
+FROM Pessoa AS pe INNER JOIN Produto AS pr INNER JOIN Genero as g INNER JOIN Tipo as t
+ON pe.idPessoa = pr.idPessoa AND pr.idTipo = t.idTipo AND pr.idGenero = g.idGenero; 
 
 INSERT INTO Produto (idProduto, idPessoa, nome, descricao, idTipo, idGenero, autor, editora, preco, paginas, estado, imagem)
 VALUES (1, 1, 'Livro', 'Descrição', 1, 1, 'Martelo de Assis', 'Panini', 50.40, 126, 1, "09876543210987654321098765432112.jpg");

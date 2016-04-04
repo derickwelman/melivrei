@@ -4,7 +4,7 @@ include("importSession.php");
 include("sessionStart.php");
 
 if(isset($_SESSION['idPessoa'])){
-	echo '<script>window.location="index.php"</script>';
+	echo '<script>window.location="../files/index.php"</script>';
 }
 
 ?>

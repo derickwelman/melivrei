@@ -3,8 +3,8 @@
 include("../functions/conexao.php");
 include("sessionStart.php");
 
-$senha = $_POST["inputForSenha"];
-$senhaAtual = $_POST["inputForSenhaAtual"];
+$senha = sha1($_POST["inputForSenha"]);
+$senhaAtual = sha1($_POST["inputForSenhaAtual"]);
 $nomeCompleto = $_POST["inputForNomeCompleto"];
 $rg = $_POST["inputForRG"];
 $cpf = $_POST["inputForCPF"];

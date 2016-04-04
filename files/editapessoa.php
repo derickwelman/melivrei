@@ -31,26 +31,40 @@ if(!isset($_SESSION['idPessoa'])){
 ?>
 
 <script>
-function validaSenha (input){ 
-    if (input.value != document.getElementById('inputForSenha').value) {
-    input.setCustomValidity('Repita a senha corretamente');
+$(document).ready(function(){
+	document.write("TESTE");
+	alert("TESTE");
+});
+
+function validaSenha (){ 
+  if (document.getElementById('inputForCofirmacaoSenha').value != document.getElementById('inputForSenha').value) {
+    document.getElementById('inputForCofirmacaoSenha').setCustomValidity('Repita a senha corretamente');
   } else {
-    input.setCustomValidity('');
+    document.getElementById('inputForCofirmacaoSenha').setCustomValidity('');
   }
 }
 
 function validaNovaSenha() {
 	var senhaAtual = document.getElementById('inputForSenhaAtual');
 	var novaSenha = document.getElementById('inputForSenha');
-	if((senhaAtual.value == "" && novaSenha.value != "") || (senhaAtual.value != "" && novaSenha.value == "")){
-		senhaAtual.setCustomValidity('Digite as senhas corretamente');
-		alert(senhaAtual.value);
-		alert(novaSenha.value);
-		return false;
+	var confirmacao = document.getElementById('inputForConfirmacaoSenha');
+	if(senhaAtual.value != ""){
+		if(novaSenha.value == ""){
+			alert('Preencha a nova senha.');
+			return false;
+		}else{
+			if(novaSenha.value != confirmacao.value){
+				alert('A nova senha e sua confirmação devem ser iguais.');
+				return false;
+			}
+		}
 	}else{
-		senhaAtual.setCustomValidity('');
-		return true;
+		if(novaSenha.value != "" || confirmacao.value != ""){
+			alert('Preencha sua senha atual.');
+			return false;
+		}
 	}
+	return true;
 }
 
 
@@ -101,23 +115,23 @@ function validaNovaSenha() {
 	<div class="page-header"><h1>Contato</h1></div>
 
 	<label for="inputForTelefone">Telefone: </label>
-	<input type="text" class="form-control" placeholder="Telefone" name="inputForTelefone" value="'.$telefone.'" pattern="\([0-9]{2}\)[0-9]{8,9}"></input>
+	<input type="text" class="form-control" placeholder="(00)00000000" name="inputForTelefone" value="'.$telefone.'" pattern="\([0-9]{2}\)[0-9]{8,9}"></input>
 
 	<label for="inputForCelular">Celular: </label>
-	<input type="text" class="form-control" placeholder="Celular" name="inputForCelular" value="'.$celular.'" pattern="\([0-9]{2}\)[0-9]{8,9}"></input>
+	<input type="text" class="form-control" placeholder="(00)00000000" name="inputForCelular" value="'.$celular.'" pattern="\([0-9]{2}\)[0-9]{8,9}"></input>
 
 	<label for="inputForEmail">Email: </label>
-	<input type="email" class="form-control" placeholder="Email" name="inputForEmail" value="'.$email.'" required></input>
+	<input type="email" class="form-control" placeholder="Email" name="inputForEmail" value="'.$email.'" required></input>';?>
 
 	<div class="page-header"><h1>Segurança</h1></div>
 
 	<label for="inputForSenhaAtual">Senha atual: </label>
-	<input type="password" class="form-control" placeholder="Senha atual" name="inputForSenhaAtual" id="inputForSenhaAtual" pattern="[0-9a-zA-Z]{6,16}" onsubmit="validaAlteracao();"></input>
+	<input type="password" class="form-control" placeholder="Senha atual" name="inputForSenhaAtual" id="inputForSenhaAtual" pattern="[0-9a-zA-Z]{6,16}"></input>
 
 	<label for="inputForSenha">Nova senha: </label>
 	<input type="password" class="form-control" placeholder="Nova senha" name="inputForSenha" pattern="[0-9a-zA-Z]{6,16}" id="inputForSenha"></input>
 
-	<label for="inputForCofirmacaoSenha">Confirmar senha: </label>
-	<input type="password" class="form-control" placeholder="Confirmação de Senha" name="inputForConfirmacaoForSenha" patter="[0-9a-zA-Z]{6,16}" oninput="validaSenha(this)"></input>';?>
+	<label for="inputForConfirmacaoSenha">Confirmar senha: </label>
+	<input type="password" class="form-control" placeholder="Confirmação de Senha" name="inputForConfirmacaoSenha" id="inputForConfirmacaoSenha" patter="[0-9a-zA-Z]{6,16}"></input>
 	<input type="submit" class="btn btn-success" name="Enviar" value="Enviar">
 </form>

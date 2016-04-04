@@ -1,6 +1,7 @@
 <meta charset="UTF-8">
 <?php
 include("importSession.php");
+include("../functions/conexao.php");
 include("sessionStart.php");
 
 if(!isset($_SESSION['idPessoa'])){
@@ -22,17 +23,23 @@ if(!isset($_SESSION['idPessoa'])){
 	<label for="inputForTipo">Quero Vender Um: </label>
 	<select class="form-control" id="inputForTipo" name="inputForTipo" required>
 		<option value=''>Livro? Revista? Quadrinho?</option>
-		<option value='1'>Livro</option>
-		<option value='2'>Revista</option>
-		<option value='3'>Quadrinho</option>
+		<?php
+		$query = $con->query("SELECT * FROM Tipo");
+		while($row = $query->fetch(PDO::FETCH_OBJ)){
+			echo '<option value="'.$row->idTipo.'">'.$row->descricao.'</option>';
+		}
+		?>
 	</select>
 
 	<label for="inputForGenero">Do Genero: </label>
 	<select class="form-control" id="inputForGenero" name="inputForGenero" required>
 		<option value=''>Romance? Ação? Terror?</option>
-		<option value='1'>Romance</option>
-		<option value='2'>Ação</option>
-		<option value='3'>Terror</option>
+		<?php
+		$query = $con->query("SELECT * FROM Genero");
+		while($row = $query->fetch(PDO::FETCH_OBJ)){
+			echo '<option value="'.$row->idGenero.'">'.$row->descricao.'</option>';
+		}
+		?>
 	</select>
 
 	<label for="inputForPreco">Quero Vender Por R$:</label>

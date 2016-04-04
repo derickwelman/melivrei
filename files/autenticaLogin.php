@@ -4,7 +4,7 @@ include("importSession.php");
 include("../functions/conexao.php");
 
 $usuario = $_POST["inputForNomeUsuario"];
-$senha = $_POST["inputForSenha"];
+$senha = sha1($_POST["inputForSenha"]);
 if(isset($_POST["inputForKeepLogged"])){
 	$keepLogged = true;
 }else{
@@ -27,9 +27,9 @@ if($query->rowCount()){
 			setcookie("usuario", $row->usuario);
 			setcookie("nome", $row->nome);
 		}
-		echo '<script>window.location="login.php";</script>';
+		echo '<script>window.location="../files/index.php";</script>';
 	}
 }else{
-	echo '<script>alert("Nome de usuário ou senha incorretos");window.location="login.php";</script>';
+	echo '<script>alert("Nome de usuário ou senha incorretos");window.location="../files/index.php";</script>';
 }
 ?>
