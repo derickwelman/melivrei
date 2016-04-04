@@ -4,7 +4,7 @@ USE melivrei;
 CREATE TABLE Pessoa(
 	idPessoa	INT		 	NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	usuario		VARCHAR(16)	NOT NULL UNIQUE,
-	senha		varchar(20)	NOT NULL,
+	senha		varchar(40)	NOT NULL,
 	nome		VARCHAR(60) NOT NULL,
 	rg			CHAR(9)		NOT NULL,
 	cpf			CHAR(11)	NOT NULL,

@@ -27,9 +27,9 @@ if($query->rowCount()){
 			setcookie("usuario", $row->usuario);
 			setcookie("nome", $row->nome);
 		}
-		echo '<script>window.location="login.php";</script>';
+		echo '<script>window.location="../files/index.php";</script>';
 	}
 }else{
-	echo '<script>alert("Nome de usuário ou senha incorretos");window.location="login.php";</script>';
+	echo '<script>alert("Nome de usuário ou senha incorretos");window.location="../files/index.php";</script>';
 }
 ?>

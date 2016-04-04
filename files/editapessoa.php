@@ -115,10 +115,10 @@ function validaNovaSenha() {
 	<div class="page-header"><h1>Contato</h1></div>
 
 	<label for="inputForTelefone">Telefone: </label>
-	<input type="text" class="form-control" placeholder="Telefone" name="inputForTelefone" value="'.$telefone.'" pattern="\([0-9]{2}\)[0-9]{8,9}"></input>
+	<input type="text" class="form-control" placeholder="(00)00000000" name="inputForTelefone" value="'.$telefone.'" pattern="\([0-9]{2}\)[0-9]{8,9}"></input>
 
 	<label for="inputForCelular">Celular: </label>
-	<input type="text" class="form-control" placeholder="Celular" name="inputForCelular" value="'.$celular.'" pattern="\([0-9]{2}\)[0-9]{8,9}"></input>
+	<input type="text" class="form-control" placeholder="(00)00000000" name="inputForCelular" value="'.$celular.'" pattern="\([0-9]{2}\)[0-9]{8,9}"></input>
 
 	<label for="inputForEmail">Email: </label>
 	<input type="email" class="form-control" placeholder="Email" name="inputForEmail" value="'.$email.'" required></input>';?>

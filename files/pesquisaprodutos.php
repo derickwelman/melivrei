@@ -16,18 +16,24 @@ include("sessionStart.php");
 
 	<label for="tipo">De qual tipo: </label>
 	<select class="form-control" id="tipo" name="tipo">
-		<option value=''>Livro? Revista? Quadrinho?</option>
-		<option value='1'>Livro</option>
-		<option value='2'>Revista</option>
-		<option value='3'>Quadrinho</option>
+		<option value=''>Livro? Revista? Quadrinho?</option>';
+		<?php
+		$query = $con->query("SELECT * FROM Tipo");
+		while($row = $query->fetch(PDO::FETCH_OBJ)){
+			echo '<option value="'.$row->idTipo.'">'.$row->descricao.'</option>';
+		}
+		?>
 	</select>
 
 	<label for="genero">Do Genero: </label>
 	<select class="form-control" id="genero" name="genero">
 		<option value=''>Romance? Ação? Terror?</option>
-		<option value='1'>Romance</option>
-		<option value='2'>Ação</option>
-		<option value='3'>Terror</option>
+		<?php
+		$query = $con->query("SELECT * FROM Genero");
+		while($row = $query->fetch(PDO::FETCH_OBJ)){
+			echo '<option value="'.$row->idGenero.'">'.$row->descricao.'</option>';
+		}
+		?>
 	</select>
 
 	<label for="autor">Autor: </label>

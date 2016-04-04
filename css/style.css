@@ -1,0 +1,185 @@
+.modal-header, h4, .close {
+  background-color: #76b5a3;
+  color:white !important;
+  text-align: center;
+  font-size: 30px;
+}
+
+.modal-footer {
+  background-color: #f9f9f9;
+}
+
+.btn-melivrei {
+  color: #fff;
+  background-color: #76b5a3;
+  border-color: #46b8da;
+}
+.btn-melivrei:focus,
+.btn-melivrei.focus {
+  color: #fff;
+  background-color: #76b5a3;
+  border-color: #1b6d85;
+}
+.btn-melivrei:hover {
+  color: #fff;
+  background-color: #76b5a3;
+  border-color: #5e9082;
+}
+.btn-melivrei:active,
+.btn-melivrei.active,
+.open > .dropdown-toggle.btn-melivrei {
+  color: #fff;
+  background-color: #76b5a3;
+  border-color: #5e9082;
+}
+.btn-melivrei:active:hover,
+.btn-melivrei.active:hover,
+.open > .dropdown-toggle.btn-melivrei:hover,
+.btn-melivrei:active:focus,
+.btn-melivrei.active:focus,
+.open > .dropdown-toggle.btn-melivrei:focus,
+.btn-melivrei:active.focus,
+.btn-melivrei.active.focus,
+.open > .dropdown-toggle.btn-melivrei.focus {
+  color: #fff;
+  background-color: #5e9082;
+  border-color: #1b6d85;
+}
+.btn-melivrei:active,
+.btn-melivrei.active,
+.open > .dropdown-toggle.btn-melivrei {
+  background-image: none;
+}
+.btn-melivrei.disabled:hover,
+.btn-melivrei[disabled]:hover,
+fieldset[disabled] .btn-melivrei:hover,
+.btn-melivrei.disabled:focus,
+.btn-melivrei[disabled]:focus,
+fieldset[disabled] .btn-melivrei:focus,
+.btn-melivrei.disabled.focus,
+.btn-melivrei[disabled].focus,
+fieldset[disabled] .btn-melivrei.focus {
+  background-color: #76b5a3;
+  border-color: #46b8da;
+}
+.btn-melivrei .badge {
+  color: #76b5a3;
+  background-color: #fff;
+}
+
+
+/**FOOTER*/
+footer{
+  padding: 20px;
+}
+/*END FOOTER*/
+
+/** PRODUTOS ***/
+
+.tamanhoProduto{
+	max-width: 150px;
+	max-height: 200px;
+}
+
+h3{
+  background-color: #76b5a3;
+  color:white !important;
+  text-align: center;
+}
+
+#products a{
+	text-decoration: none;
+}
+
+a.thumbnail:hover {
+  border-color: #5e9082;
+}
+
+/*END PRODUTOS*/
+
+.carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img{
+  height: 100%;
+  margin: auto;
+}
+
+body{
+  padding: 0px;
+  margin: 0px;
+}
+
+footer a{
+  text-decoration: : none;
+  color: white;
+}
+
+footer a:hover{
+  text-decoration: : none;
+  color: #d5d5d5;
+}
+
+.nav a{
+  color: #909090;
+  text-decoration: none;
+}
+
+.navbar-inverse{
+  margin: 0;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border: 0;
+    background: white;
+}
+
+.navbar-collapse.collapse {
+    display: block !important;
+    height: auto !important;
+    padding-bottom: 0;
+    overflow: visible !important;
+}
+
+.navbar{
+  border-radius: 0 !important;
+    min-height: 80px !important;
+    margin-bottom: 0 !important;
+}
+
+.navbar-inverse {
+    background-color: #FFF !important;
+    border: none !important;
+}
+
+.navbar-brand, .navbar > .container-fluid .navbar-brand {
+    margin-left: 50px !important;
+}
+
+.navbar-brand {
+    height: 80px !important;
+    padding: 10px 15px !important;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover {
+    color: #595757 !important;
+    background-color: #F2F2F2 !important;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover{
+    color: #595757 !important;
+}
+
+.navbar-nav > li > a {
+    padding-top: 60px !important;
+}
+
+.btn-nav{
+  padding: 35px 15px !important;
+  margin-right: 30px;
+}
+
+a, a:focus, a:hover {
+    text-decoration: none !important;
+}
+
+.mytabs{
+  max-width: 200px;
+}
